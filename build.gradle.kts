@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // Dependencies will follow the buildscript
 
 group = "org.biokotlin"
-version = "0.18"
 
 // This build script is need to use the early access
 buildscript {
@@ -93,6 +92,14 @@ dependencies {
 
 }
 
+// include versions.properties file in jar file
+tasks.jar {
+    from(sourceSets.main.get().output)
+    from(projectDir) {
+        include("version.properties")
+    }
+}
+
 java {
     withSourcesJar()
 }
@@ -106,7 +113,7 @@ tasks {
 }
 
 application {
-    mainClass.set("biokotlin.cli.BiokotlinKt")
+    mainClass.set("biokotlin.cli.BiokotlinToolsKt")
 
     // Set name of generated scripts in bin/
     applicationName = "biokotlin-tools"
