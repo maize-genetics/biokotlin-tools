@@ -71,8 +71,6 @@ dependencies {
 
     implementation("org.graalvm.sdk:graal-sdk:21.2.0")
     implementation("org.apache.commons:commons-csv:1.8")
-    implementation("io.ktor:ktor-client-core:1.6.3")
-    implementation("io.ktor:ktor-client-cio:1.6.3")
 
     implementation("com.google.guava:guava:33.1.0-jre")
     implementation("org.apache.tinkerpop:gremlin-core:3.5.1")
