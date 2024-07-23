@@ -1,4 +1,4 @@
-name: phgv2-conda
+name: biokotlin-tools-conda
 channels:
   - conda-forge
   - bioconda
