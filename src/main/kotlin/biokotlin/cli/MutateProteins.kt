@@ -23,7 +23,7 @@ import kotlin.random.Random
  * The mutations can be deletions, point mutations, or insertions.
  * The output is written to a new fasta file.
  * The mutations can be put in or out of ranges defined by a bedfile.
- * Testing CI #1
+ * Testing CI #2
  */
 class MutateProteins : CliktCommand(help = "Mutate Proteins") {
 
