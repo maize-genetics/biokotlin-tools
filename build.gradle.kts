@@ -49,12 +49,12 @@ dependencies {
 
     val kotlinVersion = rootProject.extra["kotlinVersion"]
 
-    implementation("org.biokotlin:biokotlin:0.18")
+    implementation("org.biokotlin:biokotlin:0.19")
 
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
     implementation("org.apache.logging.log4j:log4j-api:2.23.1")
 
-    implementation("com.github.ajalt.clikt:clikt:4.2.2")
+    implementation("com.github.ajalt.clikt:clikt:4.4.0")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:${kotlinVersion}")
