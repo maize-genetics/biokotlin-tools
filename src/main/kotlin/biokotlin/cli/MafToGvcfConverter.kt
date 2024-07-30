@@ -95,7 +95,6 @@ class MafToGvcfConverter : CliktCommand(help = "Create a GVCF file from a MAF fi
         }
 
         println("Creating GVCF file from MAF file vai MAFToGVCF.createGVCFfromMAF()")
-        // Call MAFToGVCF.createGVCFfromMAF() with the parameters defined above
         MAFToGVCF().createGVCFfromMAF(
             mafFile,
             referenceFile,

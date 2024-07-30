@@ -62,22 +62,18 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
     implementation("org.nield:kotlin-statistics:1.2.1")
-    implementation("com.github.holgerbrandl:krangl:0.18")
     implementation("org.jetbrains.kotlinx:dataframe:0.8.0-rc-7")
 
     // Biology possible dependencies
     // Support fasta, bam, sam, vcf, bcf support
     implementation("com.github.samtools:htsjdk:4.0.1")
 
-    implementation("org.graalvm.sdk:graal-sdk:21.2.0")
     implementation("org.apache.commons:commons-csv:1.8")
 
     implementation("com.google.guava:guava:33.1.0-jre")
-    implementation("org.jgrapht:jgrapht-core:1.5.1")
 
     implementation("io.github.oshai:kotlin-logging-jvm:5.0.0")
     implementation("it.unimi.dsi:fastutil:8.5.12")
-    implementation("org.lz4:lz4-java:1.8.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.0")
 
