@@ -6,7 +6,7 @@ Command line tools related to BioKotlin
 **BioKotlin Tools** is a command-line toolkit designed for genomic data processing and analysis. It includes a variety of utilities to handle and manipulate Variant Call Format (VCF) and Mutation Annotation Format (MAF) files. This toolkit is particularly useful for creating, validating, merging, and analyzing genomic variant data.
 
 ## Installation
-To install BioKotlin Tools, download the package and ensure all dependencies are met. The tools rely on external software like `bgzip` and `bcftools` for specific operations. Make sure these tools are installed and accessible in your system's PATH.
+To install BioKotlin Tools, download the package and make sure you have Java 17 or higher installed.
 
 ## Usage
 The main entry point for BioKotlin Tools is the `biokotlin-tools` executable. The general usage pattern is:
