@@ -1,5 +1,6 @@
 
-# BioKotlin Tools README
+# BioKotlin Tools
+Command line tools related to BioKotlin
 
 ## Overview
 **BioKotlin Tools** is a command-line toolkit designed for genomic data processing and analysis. It includes a variety of utilities to handle and manipulate Variant Call Format (VCF) and Mutation Annotation Format (MAF) files. This toolkit is particularly useful for creating, validating, merging, and analyzing genomic variant data.
