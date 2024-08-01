@@ -3,7 +3,9 @@ package biokotlin.cli
 import biokotlin.util.bufferedReader
 import biokotlin.util.setupDebugLogging
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.context
 import com.github.ajalt.clikt.core.subcommands
+import com.github.ajalt.clikt.output.MordantHelpFormatter
 import com.github.ajalt.clikt.parameters.options.versionOption
 
 /**
@@ -15,6 +17,10 @@ class BiokotlinTools : CliktCommand() {
 
     init {
         setupDebugLogging()
+
+        context {
+            helpFormatter = { MordantHelpFormatter(it, showRequiredTag = true) }
+        }
 
         // get version from version.properties file
         var majorVersion = 0
