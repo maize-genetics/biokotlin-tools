@@ -57,7 +57,7 @@ class MAFToGVCFTest : StringSpec({
         assertEquals(
             "Usage: maf-to-gvcf-converter [<options>]\n" +
                     "\n" +
-                    "Error: invalid value for --reference-file: --reference-file must not be blank\n",
+                    "Error: missing option --reference-file\n",
             missingRefFile.output
         )
 
@@ -68,7 +68,7 @@ class MAFToGVCFTest : StringSpec({
         assertEquals(
             "Usage: maf-to-gvcf-converter [<options>]\n" +
                     "\n" +
-                    "Error: invalid value for --output-file: --output-file/-o must not be blank\n",
+                    "Error: missing option --output-file\n",
             resultMissingOutput.output
         )
 
@@ -79,7 +79,7 @@ class MAFToGVCFTest : StringSpec({
         assertEquals(
             "Usage: maf-to-gvcf-converter [<options>]\n" +
                     "\n" +
-                    "Error: invalid value for --maf-file: --maf-file must not be blank\n", resultMissingMaf.output
+                    "Error: missing option --maf-file\n", resultMissingMaf.output
         )
 
         // Test missing sampleName
@@ -89,7 +89,7 @@ class MAFToGVCFTest : StringSpec({
         assertEquals(
             "Usage: maf-to-gvcf-converter [<options>]\n" +
                     "\n" +
-                    "Error: invalid value for --sample-name: --sample-name must not be blank\n",
+                    "Error: missing option --sample-name\n",
             resultMissingSampleName.output
         )
     }
