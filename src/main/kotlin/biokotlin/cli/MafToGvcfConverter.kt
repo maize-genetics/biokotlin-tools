@@ -5,7 +5,7 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.validate
+import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.types.int
 
 /**
@@ -16,36 +16,16 @@ import com.github.ajalt.clikt.parameters.types.int
  */
 class MafToGvcfConverter : CliktCommand(help = "Create a GVCF file from a MAF file") {
     val referenceFile by option(help = "Path to local Reference FASTA file")
-        .default("")
-        .validate {
-            require(it.isNotBlank()) {
-                "--reference-file must not be blank"
-            }
-        }
+        .required()
 
     val mafFile by option(help = "MAF file to be converted to GVCF")
-        .default("")
-        .validate {
-            require(it.isNotBlank()) {
-                "--maf-file must not be blank"
-            }
-        }
+        .required()
 
     val outputFile by option("-o", "--output-file", help = "Name for output GVCF file ")
-        .default("")
-        .validate {
-            require(it.isNotBlank()) {
-                "--output-file/-o must not be blank"
-            }
-        }
+        .required()
 
     val sampleName by option(help = "sampleName to be used in the GVCF file")
-        .default("")
-        .validate {
-            require(it.isNotBlank()) {
-                "--sample-name must not be blank"
-            }
-        }
+        .required()
 
     // For the flag options that default to false:  if you include the flag, the value is true, if you do not include the flag, the value is false
     val fillGaps by option(
