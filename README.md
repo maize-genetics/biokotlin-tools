@@ -31,10 +31,10 @@ biokotlin-tools maf-to-gvcf-converter [<options>]
 ```
 
 **Options:**
-- `--reference-file=<text>`: Path to the local Reference FASTA file.
-- `--maf-file=<text>`: MAF file to be converted to GVCF.
-- `-o, --output-file=<text>`: Name for the output GVCF file.
-- `--sample-name=<text>`: Sample name to be used in the GVCF file.
+- `--reference-file=<text>`: Path to the local Reference FASTA file. (required)
+- `--maf-file=<text>`: MAF file to be converted to GVCF. (required)
+- `-o, --output-file=<text>`: Name for the output GVCF file. (required)
+- `--sample-name=<text>`: Sample name to be used in the GVCF file. (required)
 - `-f`: Fill in gaps with reference blocks if the MAF file does not cover the entire genome.
 - `--two-gvcfs`: Output just the GT flag.
 - `--del-as-symbolic`: Represent large deletions with the symbolic allele `<DEL>`.
@@ -53,9 +53,9 @@ biokotlin-tools validate-gvcfs [<options>]
 ```
 
 **Options:**
-- `--input-dir=<text>`: Full path to the input GVCF file directory.
-- `--output-dir=<text>`: Full path to the output GVCF file directory.
-- `--reference-file=<text>`: Full path to the reference FASTA file.
+- `--input-dir=<text>`: Full path to the input GVCF file directory. (required)
+- `--output-dir=<text>`: Full path to the output GVCF file directory. (required)
+- `--reference-file=<text>`: Full path to the reference FASTA file. (required)
 - `--correct`: Correct or filter out incorrect reference sequences in the output GVCF file.
 
 ### 3. merge-gvcfs
@@ -67,8 +67,8 @@ biokotlin-tools merge-gvcfs [<options>]
 ```
 
 **Options:**
-- `--input-dir=<text>`: Full path to the input GVCF file directory.
-- `--output-file=<text>`: Full path to the output VCF file.
+- `--input-dir=<text>`: Full path to the input GVCF file directory. (required)
+- `--output-file=<text>`: Full path to the output VCF file. (required)
 
 ### 4. validate-vcfs
 Validates (G)VCF files in a directory.
@@ -79,7 +79,7 @@ biokotlin-tools validate-vcfs [<options>]
 ```
 
 **Options:**
-- `--input-dir=<text>`: Full path to the input (G)VCF file directory.
+- `--input-dir=<text>`: Full path to the input (G)VCF file directory. (required)
 
 ### 5. mutate-proteins
 Mutates proteins based on input parameters.
@@ -90,9 +90,9 @@ biokotlin-tools mutate-proteins [<options>]
 ```
 
 **Options:**
-- `--input-fasta=<text>`: Full path to the input FASTA file.
-- `--output-fasta=<text>`: Full path to the output FASTA file.
-- `--bedfile=<text>`: Full path to the BED file specifying regions.
+- `--input-fasta=<text>`: Full path to the input FASTA file. (required)
+- `--output-fasta=<text>`: Full path to the output FASTA file. (required)
+- `--bedfile=<text>`: Full path to the BED file specifying regions. (required)
 - `--type-mutation=(DELETION|POINT_MUTATION|INSERTION)`: Type of mutation.
 - `--put-mutations-in-ranges=true|false`: Apply mutations within BED file ranges.
 - `--length=<int>`: Length of the deletion mutation.
