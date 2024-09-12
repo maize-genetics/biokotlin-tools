@@ -19,7 +19,7 @@ class BiokotlinTools : CliktCommand() {
         setupDebugLogging()
 
         context {
-            helpFormatter = { MordantHelpFormatter(it, showRequiredTag = true) }
+            helpFormatter = { MordantHelpFormatter(it, showRequiredTag = true, showDefaultValues = true) }
         }
 
         // get version from version.properties file
