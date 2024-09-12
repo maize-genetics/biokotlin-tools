@@ -30,19 +30,19 @@ class MafToGvcfConverter : CliktCommand(help = "Create a GVCF file from a MAF fi
     // For the flag options that default to false:  if you include the flag, the value is true, if you do not include the flag, the value is false
     val fillGaps by option(
         "-f",
-        help = "Defaults to FALSE: If true, and the maf file does not fully cover the reference genome, any gaps\n" +
+        help = "If true, and the maf file does not fully cover the reference genome, any gaps\n" +
                 " *     in coverage will be filled in with reference blocks."
     )
         .flag(default = false)
 
-    val twoGvcfs by option(help = "Defaults to FALSE: Output just the GT flag.  If set to false(default) will output DP, AD and PL fields")
+    val twoGvcfs by option(help = "Output just the GT flag.  If set to false will output DP, AD and PL fields")
         .flag(default = false)
 
-    val delAsSymbolic by option(help = "Defaults to FALSE: If true, deletions larger than maxDeletionSize (see below) will be represented with the symbolic allele <DEL>.")
+    val delAsSymbolic by option(help = "If true, deletions larger than maxDeletionSize (see below) will be represented with the symbolic allele <DEL>.")
         .flag(default = false)
 
     val outJustGT by option(
-        help = "Defaults to FALSE: If true, it indicates the input maf was created from a diploid alignment and should\n" +
+        help = "If true, it indicates the input maf was created from a diploid alignment and should\n" +
                 " *     be used to create two separate gVCF files"
     )
         .flag(default = false)
@@ -51,18 +51,18 @@ class MafToGvcfConverter : CliktCommand(help = "Create a GVCF file from a MAF fi
     // You must use the secondary name (here it is the --compress-off flag) to set the value to false.
     val compressAndIndex by option(
         "-c",
-        help = "Defaults to TRUE: Run bgzip and bcftools index -c on the output file. if bgzip and bcftools are not on the system path, this will fail"
+        help = "Run bgzip and bcftools index -c on the output file. if bgzip and bcftools are not on the system path, this will fail"
     )
         .flag("--compress-off", default = true)
 
-    val outputType by option(help = "Type of dataset to export: choices are gvcf or vcf, defaults to gvcf")
+    val outputType by option(help = "Type of dataset to export: choices are gvcf or vcf")
         .default("gvcf")
 
-    val maxDeletionSize by option(help = "Defaults to 0: If del-as-symbolic is true, replace deletions longer than this size with symbolic alleles")
+    val maxDeletionSize by option(help = "If del-as-symbolic is true, replace deletions longer than this size with symbolic alleles")
         .int()
         .default(0)
 
-    val anchorwaveLegacy by option(help = "Defaults to false.  Enable this option if the MAF was created prior to Anchorwave version 1.2.3.  Otherwise the ASM coordinates will not be correct. ")
+    val anchorwaveLegacy by option(help = "Enable this option if the MAF was created prior to Anchorwave version 1.2.3.  Otherwise the ASM coordinates will not be correct. ")
         .flag(default = false)
 
     override fun run() {

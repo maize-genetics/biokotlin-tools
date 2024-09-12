@@ -22,8 +22,7 @@ class ValidateGVCFs : CliktCommand(help = "Validate GVCF files") {
 
     val correct by option(
         help = "If true, fix incorrect reference sequences in the output GVCF file. " +
-                "If false, filter out incorrect reference sequences in the output GVCF file" +
-                "Default is false."
+                "If false, filter out incorrect reference sequences in the output GVCF file"
     )
         .flag(default = false)
 
