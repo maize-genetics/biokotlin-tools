@@ -54,6 +54,8 @@ class MutateProteins : CliktCommand(help = "Mutate Proteins") {
 
     override fun run() {
 
+        logCommand(this)
+
         MutateProteinsUtils.mutateProteins(
             inputFasta,
             mutatedIndicesBedfile,
