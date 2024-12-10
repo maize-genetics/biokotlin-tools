@@ -13,7 +13,7 @@ private val myLogger = LogManager.getLogger("biokotlin.cli.CliktLogging")
 fun logCommand(command: CliktCommand) {
 
     command.currentContext.originalArgv.joinToString(" ").let {
-        myLogger.info("PHGv2 Command: $it")
+        myLogger.info("BioKotlin Tools Command: $it")
     }
 
     command.currentContext.command.registeredOptions().forEach {
