@@ -66,7 +66,9 @@ class MafToGvcfConverter : CliktCommand(help = "Create a GVCF file from a MAF fi
         .flag(default = false)
 
     override fun run() {
-        println("LCJ begin run: fillGaps = $fillGaps, twoGvcfs = $twoGvcfs, outJustGT = $outJustGT, compressAndIndex = $compressAndIndex, delAsSymbolic = $delAsSymbolic,  outputType = $outputType")
+
+        logCommand(this)
+
         val outputType = try {
             MAFToGVCF.OUTPUT_TYPE.valueOf(outputType)
         } catch (exc: IllegalArgumentException) {

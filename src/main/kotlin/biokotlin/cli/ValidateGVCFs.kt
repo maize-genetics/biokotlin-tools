@@ -27,6 +27,7 @@ class ValidateGVCFs : CliktCommand(help = "Validate GVCF files") {
         .flag(default = false)
 
     override fun run() {
+        logCommand(this)
         ValidateGVCFsUtils.validateGVCFs(inputDir, outputDir, referenceFile, correct)
     }
 
