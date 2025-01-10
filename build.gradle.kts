@@ -42,14 +42,13 @@ repositories {
     maven("https://maven.imagej.net/content/groups/public/")
     maven("https://jitpack.io")
     maven("https://dl.bintray.com/kotlin/kotlin-eap")
-    maven("https://kotlin.bintray.com/kotlinx")
 }
 
 dependencies {
 
     val kotlinVersion = rootProject.extra["kotlinVersion"]
 
-    implementation("org.biokotlin:biokotlin:0.22")
+    implementation("org.biokotlin:biokotlin:0.23")
 
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
     implementation("org.apache.logging.log4j:log4j-api:2.23.1")
