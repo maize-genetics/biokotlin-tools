@@ -8,7 +8,7 @@ import java.security.MessageDigest
  * Allows user to specify the protocol, e.g. MD5, SHA-1, SHA-256
  *
  * @param filename filename to checksum
- * @param protocol protocol
+ * @param protocol protocol (default "MD5")
  *
  * @return check sum
  */
