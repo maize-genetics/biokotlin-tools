@@ -8,7 +8,7 @@ private val myLogger = LogManager.getLogger("biokotlin.cli.CliktLogging")
 
 
 /**
- * Log the command name and all parameters and their values.
+ * Log the command name and all parameters with their values.
  */
 fun logCommand(command: CliktCommand) {
 
