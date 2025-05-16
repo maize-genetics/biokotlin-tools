@@ -6,7 +6,49 @@ Command line tools related to BioKotlin
 **BioKotlin Tools** is a command-line toolkit designed for genomic data processing and analysis. It includes a variety of utilities to handle and manipulate Variant Call Format (VCF) and Multiple Alignment Format (MAF) files. This toolkit is particularly useful for creating, validating, merging, and analyzing genomic variant data.
 
 ## Installation
-To install BioKotlin Tools, download the package and make sure you have Java 17 or higher installed.
+
+> [!NOTE]
+> You will need Java (version $\geq$ 17) installed on your machine.
+
+* Download the latest `.tar` version [here](https://github.com/maize-genetics/biokotlin-tools/releases/latest)
+  + Alternatively, head over to the [releases page](https://github.com/maize-genetics/biokotlin-tools/releases)
+    to install specific versions of the package
+
+* Untar the package:
+
+  ```shell
+  tar -xvf <biokotlin_tools_release>.tar
+  ```
+
+* Navigate to the package's executable scripts:
+
+  ```shell
+  cd biokotlin-tools/bin
+  ```
+
+* Invoke commands through the `biokotlin-tools` wrapper scripts:
+
+  ```shell
+  # Linux/macOS example
+  ./biokotlin-tools --version
+
+  # Windows example
+  .\biokotlin-tools.bat --version
+  ```
+
+> [!NOTE]
+> Since this is a Java application, you can set memory prior to running the program
+> by using the following where `<memory_amount>` is the value and unit of memory to
+> allocate:
+>
+> ```shell
+> export JAVA_OPTS="-Xmx<memory_amount>"
+> 
+> ./biokotlin-tools ...
+> ```
+>
+> More info on `-Xmx` values can be found [here](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999528)
+
 
 ## Usage
 The main entry point for BioKotlin Tools is the `biokotlin-tools` executable. The general usage pattern is:
