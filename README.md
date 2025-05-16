@@ -20,7 +20,7 @@ Command line tools related to BioKotlin
   tar -xvf <biokotlin_tools_release>.tar
   ```
 
-* Navigate to the package's executable script:
+* Navigate to the package's executable scripts:
 
   ```shell
   cd biokotlin-tools/bin
