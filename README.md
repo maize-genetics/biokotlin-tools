@@ -36,6 +36,20 @@ Command line tools related to BioKotlin
   .\biokotlin-tools.bat --version
   ```
 
+> [!NOTE]
+> Since this is a Java application, you can set memory prior to running the program
+> by using the following where `<memory_amount>` is the value and unit of memory to
+> allocate:
+>
+> ```shell
+> export JAVA_OPTS="-Xmx<memory_amount>"
+> 
+> ./biokotlin-tools ...
+> ```
+>
+> More info on `-Xmx` values can be found [here](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999528)
+
+
 ## Usage
 The main entry point for BioKotlin Tools is the `biokotlin-tools` executable. The general usage pattern is:
 
