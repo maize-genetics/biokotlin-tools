@@ -33,7 +33,7 @@ Command line tools related to BioKotlin
   ./biokotlin-tools --version
 
   # Windows example
-  ./biokotlin-tools.bat --version
+  .\biokotlin-tools.bat --version
   ```
 
 ## Usage
