@@ -7,6 +7,9 @@ import com.github.ajalt.clikt.parameters.options.required
 import org.apache.logging.log4j.LogManager
 import java.io.File
 
+/**
+ * This command merges multiple GVCF files into a single VCF file.
+ */
 class MergeGVCFs : CliktCommand(help = "Merge GVCF files into Single VCF file") {
 
     private val myLogger = LogManager.getLogger(MergeGVCFs::class.java)

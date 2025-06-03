@@ -8,7 +8,7 @@ Command line tools related to BioKotlin
 ## Installation
 
 > [!NOTE]
-> You will need Java (version $\geq$ 17) installed on your machine.
+> You will need Java (version $\geq$ 21) installed on your machine.
 
 * Download the latest `.tar` version [here](https://github.com/maize-genetics/biokotlin-tools/releases/latest)
   + Alternatively, head over to the [releases page](https://github.com/maize-genetics/biokotlin-tools/releases)
