@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // Note Kotlin version needs to be updated in both the buildscript and plugins.
@@ -7,7 +8,7 @@ group = "org.biokotlin"
 
 // This build script is need to use the early access
 buildscript {
-    val kotlinVersion by extra("1.9.24")
+    val kotlinVersion by extra("2.1.21")
 
     repositories {
         mavenCentral()
@@ -20,9 +21,12 @@ buildscript {
     }
 }
 
+kotlin {
+    jvmToolchain(21)
+}
 
 plugins {
-    val kotlinVersion = "1.9.24"
+    val kotlinVersion = "2.1.21"
     java
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
@@ -39,16 +43,15 @@ apply {
 repositories {
     mavenCentral()
     gradlePluginPortal()
-    maven("https://maven.imagej.net/content/groups/public/")
     maven("https://jitpack.io")
-    maven("https://dl.bintray.com/kotlin/kotlin-eap")
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/eap")
 }
 
 dependencies {
 
     val kotlinVersion = rootProject.extra["kotlinVersion"]
 
-    implementation("org.biokotlin:biokotlin:0.25")
+    implementation("org.biokotlin:biokotlin:1.0.0")
 
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
     implementation("org.apache.logging.log4j:log4j-api:2.23.1")
@@ -57,8 +60,8 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:${kotlinVersion}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
 
     implementation("org.nield:kotlin-statistics:1.2.1")
     implementation("org.jetbrains.kotlinx:dataframe:0.8.0-rc-7")
@@ -71,7 +74,6 @@ dependencies {
 
     implementation("com.google.guava:guava:33.1.0-jre")
 
-    implementation("io.github.oshai:kotlin-logging-jvm:5.0.0")
     implementation("it.unimi.dsi:fastutil:8.5.12")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.0")
@@ -96,7 +98,7 @@ java {
 }
 
 tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions.jvmTarget = "17"
+    compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
 }
 
 tasks {
