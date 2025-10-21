@@ -141,3 +141,29 @@ biokotlin-tools mutate-proteins [<options>]
 - `--num-mutations=<int>`: Number of point mutations.
 - `--mutated-indices-bedfile=<text>`: Full path to BED file for outputting mutated indices.
 - `--random-seed=<int>`: Seed for random number generation.
+
+### 6. calc-kmer-distance
+Calculates kmer-based distance metrics for a collection of nucleotide sequences.
+
+**Usage:**
+```
+biokotlin-tools calc-kmer-distance [<options>]
+```
+
+- `--input-fasta=<text>`: Full path to the input FASTA file. File should contain all sequences to be compared. `(required)`
+- `--out-prefix=<text>`: Full path to the output table prefix. Four tables will be created. `(required)`
+- `--kmer-size=<int>`: Size k of the kmers. Kmers may not be larger than 31. Default 21.
+
+**Output:**
+
+`calc-kmer-distance` produces four tables with different kmer-based distance metrics. Each cell of the matrix contains
+the distance between SeqX and SeqY for each possible combination of sequences in the input FASTA file. For each sequence, 
+we find kmers of length `kmer-size` and count the number of times each kmer occurs. Then, for each kmer in SeqX, we
+find the Hamming distance to the most similar kmer in SeqY and vice versa. The distance measures are as follows:
+
+- `_h1_distance`: how many kmers in either sequence had a Hamming distance value of 1. Captures sparse SNPs.
+- `hmany_distance`: how many kmers in either sequence had a Hamming distance value of 2 or more. Captures indels and dense SNPs.
+- `copy_number_difference_distance`: of the kmers that appear in both SeqX and SeqY, what is the difference in their counts. Captures copy number variation.
+- `copy_number_count_distance`: of the kmers that appear in both SeqX and SeqY, how many have a different count number. Captures the amount of unique sequence involved in copy number variation.
+
+All counts are normalized by dividing by the average length of SeqX and SeqY.

@@ -58,6 +58,7 @@ fun main(args: Array<String>) = BiokotlinTools()
         ValidateGVCFs(),
         MergeGVCFs(),
         ValidateVCFs(),
-        MutateProteins()
+        MutateProteins(),
+        CalcKmerDistance()
     )
     .main(args)
